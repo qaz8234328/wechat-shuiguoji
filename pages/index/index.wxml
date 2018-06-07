@@ -1,0 +1,75 @@
+
+<view class="content">
+  <view class="quan" style='padding: 8px 2px 8px 2px;display:flex'>
+    <view class="quan-item" style='height:66rpx' >
+     <view class="money" >可用金币</view>
+     <view class="text" >{{my_balance}}</view>
+    </view>
+
+    <view class="quan-item" style='height:66rpx' >
+     <view class="money" >当前赢取</view>
+     <view class="text" >{{win_number}}</view>
+    </view>
+   </view>
+</view>
+
+
+<view class="container-out">
+   
+        <view  wx:for="{{awardList}}" id="{{index}}" style="position:absolute;left:{{item.leftAward}}rpx;top:{{item.topAward}}rpx;" >
+           <image src="{{item.imageAward}}"  style="width:140rpx;height:140rpx;border: {{(index==indexSelect)?2:1}}px solid {{(index==indexSelect)?colorAwardDefault:colorAwardSelect}};" ></image>
+     
+        </view>
+
+        <view id="adv" style="position:absolute;border:1px blue solid;width:440rpx;height:438rpx;left:76px;top:76px;"   class="win_piece">
+            <image src="../../images/fruit/logo.png" style='width:440rpx;height:438rpx;' ></image>
+        </view>
+
+</view>
+<view class="content">
+  <view class="quan">
+    <view class="quan-item">
+      <view class="money" >{{barNumber}}</view>
+      <view class="text" bindtap='bar_click'>
+        <image  class="quan-child"  src="../../images/icons/b_bar.png"></image>
+      </view>
+    </view>
+    <view class="quan-item">
+      <view class="money" >{{sevenNumber}}</view>
+      <view class="text" bindtap='seven_click'>
+        <image  class="quan-child"  src="../../images/icons/77.png"></image>
+      </view>
+    </view>
+
+    <view class="quan-item">
+      <view class="money" >{{starNumber}}</view>
+      <view class="text" bindtap='star_click'>
+        <image  class="quan-child"  src="../../images/icons/b_star.png"></image>
+      </view>
+    </view>
+    <view class="quan-item">
+      <view class="money" >{{alarmNumber}}</view>
+      <view class="text" bindtap='alarm_click'>
+        <image  class="quan-child"  src="../../images/icons/alarm.png"></image>
+      </view>
+    </view>
+    <view class="quan-item">
+      <view class="money" >{{appleNumber}}</view>
+      <view class="text" bindtap='apple_click'>
+        <image  class="quan-child"  src="../../images/icons/apple.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+<view>
+  <button type="warn" bindtap="start" disabled="{{isRunning}}">开始</button>
+</view>
+
+<view>
+    <button bindtap='onShareAppMessage' open-type='share'>点击分享</button>
+</view>
+
+<!--
+<web-view src="https://www.rong168.com.cn/#wechat_redirect"></web-view>
+-->
